@@ -1,1 +1,43 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: palegreen;
+  box-sizing: border-box;
+}
+
+.card {
+  text-align: center;
+  margin: auto;
+  height: 400px;
+  font-size: 100px;
+  width: 275px;
+  padding: 20px;
+  padding-top: 130px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+  background: white;
+}
+
+#iconoUp {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#iconoDown {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#cardValue {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.btn {
+  color: orange;
+  text-align: center;
+  margin-left: 729px;
+  margin-top: 50px;
+  background: whitesmoke;
+}
