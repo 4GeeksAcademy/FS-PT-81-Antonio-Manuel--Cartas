@@ -4,61 +4,50 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+let valores = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
-window.onload = function() {
-  //write your code here
-  // document.querySelector("card").innerHTML = generateRandomNumber;
-  // document.querySelector("card").classList.add(generateRandomSuit);
-  let valores = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K"
-  ];
+let figura = ["♣", "♦", "♥", "♠"];
 
-  let figura = ["♣", "♦", "♥", "♠"];
-  let randomNumber = Math.floor(Math.random() * 13);
-  let randomSuit = Math.floor(Math.random() * 4);
+let randomNumber = Math.floor(Math.random() * valores.length);
+let randomSuit = Math.floor(Math.random() * figura.length);
 
-  document.getElementById("iconoUp").innerHTML = figura[randomSuit];
-  document.getElementById("cardValue").innerHTML = valores[randomNumber];
-  document.getElementById("iconoDown").innerHTML = figura[randomSuit];
+const btn = document.getElementById("btn");
+let iconoUp = document.getElementById("iconoUp");
+iconoUp.innerHTML = figura[randomSuit];
+let cardValue = document.getElementById("cardValue");
+cardValue.innerHTML = valores[randomNumber];
+let iconoDown = document.getElementById("iconoDown");
+iconoDown.innerHTML = figura[randomSuit];
 
-  // document.console.log("Hello Rigo from the console!");
+function getRandomValue(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function assignValues() {
+  let random = getRandomValue(figura);
+  iconoUp.innerText = random;
+  iconoDown.innerText = random;
+  cardValue.innerText = getRandomValue(valores);
+}
+
+window.onload = () => {
+  assignValues();
 };
 
-// // let generateRandomNumber = () => {
-//   // let valores = [
-//     "A",
-//     "2",
-//     "3",
-//     "4",
-//     "5",
-//     "6",
-//     "7",
-//     "8",
-//     "9",
-//     "10",
-//     "J",
-//     "Q",
-//     "K"
-//   ];
-
-//   let numerosIndex = Math.floor(Math.random) * valores.length;
-//   return valores[numerosIndex];
-// };
-
-// let generateRandomSuit = () => {
-//   let figura = ["diamonds", "spades", "hearts", "clubs"];
-//   let figuraIndex = Math.floor(Math.random) * figura.length;
-//   return figura[figuraIndex];
-// // };
+btn.addEventListener("click", () => {
+  assignValues();
+});
